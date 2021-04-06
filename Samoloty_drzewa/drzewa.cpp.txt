@@ -1,0 +1,144 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+class Przyloty {
+public:
+	int Czas;
+	Przyloty* zlewej;
+	Przyloty* zprawej;
+	Przyloty* prev;
+	Przyloty(int min = 0, Przyloty* zlewej = NULL, Przyloty* zprawej = NULL, Przyloty* prev = NULL) :
+		Czas(min), zlewej(zlewej), zprawej(zprawej), prev(prev) {};
+};
+
+void Dodaj_przylot(Przyloty*& root, int min);
+void Pokaz_przylot(Przyloty* root, int current);
+bool Sprawdz_czas(int root_time, int arrival_time);
+void Bledny_przylot(Przyloty*& root, int czas);
+Przyloty* Czas1(Przyloty* root);
+void Usun_przylot(Przyloty*& root, int czas);
+
+bool Sprawdz_czas(int root_time, int arrival_time) {
+	if (arrival_time > (root_time + 3) || arrival_time < (root_time - 3)) return true;
+	else return false;
+}
+void Dodaj_przylot(Przyloty* &root, int czas) {
+	Przyloty* troot = root;
+	Przyloty* newA = new Przyloty(czas);
+	bool search = true;
+	if (root == NULL) {
+		root = newA;
+	}
+	else {
+		while (search) {
+			if (Sprawdz_czas(troot->Czas, czas)) {
+				if (czas > troot->Czas) {
+					if (troot->zprawej == NULL) {
+						newA->prev = troot;
+						troot->zprawej = newA;
+						search = false;
+					}
+					else {
+						troot = troot->zprawej;
+					}
+				}
+				else {
+					if (troot->zlewej == NULL) {
+							newA->prev = troot;
+							troot->zlewej = newA;
+						search = false;
+					}
+					else {
+						troot = troot->zlewej;
+					}
+				}
+			}
+			else {
+				cout << "Nie da się zaplanować przylotu" << endl;
+				search = false;
+			}
+		}
+	}
+}
+
+void Pokaz_przylot(Przyloty* root, int czas) {
+	if (root) {
+		Pokaz_przylot(root->zlewej, czas);
+		cout << (root->Czas) - czas << endl;
+		Pokaz_przylot(root->zprawej, czas);
+	}
+	
+}
+
+void Bledny_przylot(Przyloty*& root, int czas) {
+	if (root) {
+		Przyloty* min = Sprawdz_czas(root);
+		while (czas-> min <= czas) {
+			if (czas == root) {
+				if (root->zprawej) {
+					root = root-> zprawej;
+					root-> prev = NULL;
+				}
+				else {
+					root = NULL;
+					break;
+				}
+			}
+			else {
+				if (Czas-> zprawej == NULL) {
+					Czas-> prev-> zlewej = NULL;
+					delete(czas);
+				}
+				else {
+					czas-> zprawej->prev = czas->prev;
+					czas-> prev->zlewej = czas->zprawej;
+					delete(czas);
+				}
+				
+			}
+			if (Sprawdz_czas(root)) czas = Sprawdz_czas(root);
+		}
+	}
+}
+
+Przylot* Sprawdz_czas(Przylot* root) {
+	if (root) {
+		if (root->left) {
+			root = Sprawdz_czas(root->zlewej);
+		}
+		return root;
+	}
+	else {
+		return NULL;
+	}
+	
+	
+}
+
+void main() {
+	Przylot* Roo
+ = NULL;
+	time_t start, check;
+	czas(&start);
+	int current = 0;
+	int arr;
+	cout << "Zaplanowane przyloty:" << endl;
+	Pokaz_przylot(Root, current);
+	cout << "Podaj czas przybycia" << endl;
+	cin >> arr;
+	while (arr != 0) {
+		czas(&check);
+		current += (int)(difftime(check, start) / 60);
+		czas(&start);
+		remove_arrivals(Root, current);
+		Dodaj_przylot(Root, current+arr);
+		cout <<"Bierzące przyloty" << endl;
+		Pokaz_przylot(Root, current);
+		cout << "Podaj czas przybycia" << endl;
+		cin >> arr;
+		cout << "-----------" << endl;
+	}
+	
+}
