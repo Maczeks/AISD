@@ -1,0 +1,13 @@
+﻿  Źródło.cpp
+D:\C++,C\Wzorce\Wzorce\Wzorce\Źródło.cpp(62,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\C++,C\Wzorce\Wzorce\Wzorce\Źródło.cpp(76,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\C++,C\Wzorce\Wzorce\Wzorce\Źródło.cpp(111,24): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\C++,C\Wzorce\Wzorce\Wzorce\Źródło.cpp(153,24): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\C++,C\Wzorce\Wzorce\Wzorce\Źródło.cpp(186,24): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+D:\C++,C\Wzorce\Wzorce\Wzorce\Źródło.cpp(91,19): warning C4101: "tmp3": lokalna zmienna, do której nie istnieje odwołanie
+D:\C++,C\Wzorce\Wzorce\Wzorce\Źródło.cpp(91,31): warning C4101: "tmp5": lokalna zmienna, do której nie istnieje odwołanie
+D:\C++,C\Wzorce\Wzorce\Wzorce\Źródło.cpp(91,37): warning C4101: "tmp6": lokalna zmienna, do której nie istnieje odwołanie
+D:\C++,C\Wzorce\Wzorce\Wzorce\Źródło.cpp(91,25): warning C4101: "tmp4": lokalna zmienna, do której nie istnieje odwołanie
+D:\C++,C\Wzorce\Wzorce\Wzorce\Źródło.cpp(91,13): warning C4101: "tmp2": lokalna zmienna, do której nie istnieje odwołanie
+D:\C++,C\Wzorce\Wzorce\Wzorce\Źródło.cpp(91,7): warning C4101: "tmp1": lokalna zmienna, do której nie istnieje odwołanie
+  Wzorce.vcxproj -> D:\C++,C\Wzorce\Wzorce\Debug\Wzorce.exe
